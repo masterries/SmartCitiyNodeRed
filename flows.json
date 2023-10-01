@@ -303,7 +303,7 @@
         "name": "",
         "order": 1,
         "width": "6",
-        "height": "3",
+        "height": "9",
         "format": "<iframe src=\"/worldmap\" style=\"width:100%; height:70vh;\" frameborder=\"0\"></iframe>\n\n<style>\n    .nr-dashboard-template {\n        width: 100% !important;\n    }\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
