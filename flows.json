@@ -151,28 +151,6 @@
         }
     },
     {
-        "id": "6ef76df7976f228e",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "",
-        "order": 2,
-        "disp": true,
-        "width": "20",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "31e276cb951db193",
-        "type": "ui_group",
-        "name": "info",
-        "tab": "",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "39a2a9f80bc66c7f",
         "type": "function",
         "z": "dbf7bfac9deb3b76",
@@ -552,7 +530,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
+        "x": 800,
         "y": 100,
         "wires": [
             [
