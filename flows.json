@@ -579,5 +579,33 @@
         "x": 1100,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "fd7c944f51ac7a17",
+        "type": "ui_button",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "group": "12f51630d4ade7a5",
+        "order": 6,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "label": "Generate Random Point",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "39a2a9f80bc66c7f"
+            ]
+        ]
     }
 ]
