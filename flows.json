@@ -647,137 +647,6 @@
         ]
     },
     {
-        "id": "f3ec7c65c210eb44",
-        "type": "inject",
-        "z": "46eac0e758129262",
-        "name": "",
-        "props": [
-            {
-                "p": "payload.action",
-                "v": "send",
-                "vt": "str"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 370,
-        "y": 40,
-        "wires": [
-            [
-                "b2144f8c880a87c7"
-            ]
-        ]
-    },
-    {
-        "id": "6ca914b880cb3195",
-        "type": "inject",
-        "z": "46eac0e758129262",
-        "name": "",
-        "props": [
-            {
-                "p": "lat",
-                "v": "52.625097",
-                "vt": "str"
-            },
-            {
-                "p": "lon",
-                "v": "-2.484591",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 290,
-        "y": 240,
-        "wires": [
-            [
-                "b2144f8c880a87c7"
-            ]
-        ]
-    },
-    {
-        "id": "dbf27d2e7c0a383d",
-        "type": "inject",
-        "z": "46eac0e758129262",
-        "name": "",
-        "props": [
-            {
-                "p": "lat",
-                "v": "54.625097",
-                "vt": "str"
-            },
-            {
-                "p": "lon",
-                "v": "-4.484591",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 310,
-        "y": 340,
-        "wires": [
-            [
-                "b2144f8c880a87c7"
-            ]
-        ]
-    },
-    {
-        "id": "b2144f8c880a87c7",
-        "type": "geofence",
-        "z": "46eac0e758129262",
-        "name": "home -geofence",
-        "mode": "polyline",
-        "inside": "both",
-        "rad": 0,
-        "points": [
-            {
-                "latitude": 52.621710543120244,
-                "longitude": -2.491055488062557
-            },
-            {
-                "latitude": 52.62947359586464,
-                "longitude": -2.491055488062557
-            },
-            {
-                "latitude": 52.62947359586464,
-                "longitude": -2.4719152445322834
-            },
-            {
-                "latitude": 52.621710543120244,
-                "longitude": -2.4719152445322834
-            }
-        ],
-        "centre": {},
-        "floor": "",
-        "ceiling": "",
-        "worldmap": true,
-        "outputs": 2,
-        "x": 520,
-        "y": 60,
-        "wires": [
-            [
-                "9df49d3b2e72c45c"
-            ],
-            [
-                "693ad01eb0ef224a"
-            ]
-        ]
-    },
-    {
         "id": "012a7884b08f1045",
         "type": "debug",
         "z": "46eac0e758129262",
@@ -833,6 +702,7 @@
         "name": "move icon",
         "func": "//let inarea_flag=flow.get(\"inarea_flag\");\nlet count_flag =true;\n//if (typeof inarea_flag==\"undefined\")\n //   inarea_flag=false;\nlet count=context.get(\"count\");\nif (typeof count==\"undefined\" || msg.topic==\"reset\")\n    count=0;\nvar icon=context.get(\"icon\");\nif (typeof icon==\"undefined\")\nicon=\"\";\nif (msg.topic==\"icon\")\n{\nicon=msg.payload;\ncount_flag=false;\n\n}\nlet s_lat=52.628945;\nlet s_long=-2.501205\nlet end_lat=52.62405;\nlet end_long=-2.470593;\nlet inc_lat=(end_lat-s_lat)/12;\nlet inc_long=(end_long-s_long)/12;\nlet i_color=\"blue\";\n//if(inarea_flag)\n//i_color=\"green\";\nif(count_flag && msg.topic!=\"reset\")\n{\n    count+=1;\n//node.log(\"colour=\"+i_color);\n}\nif(msg.topic==\"reverse\" && count>2)\ncount=count-2;\n\nlet lat=s_lat+(count*inc_lat);\nlet long=s_long+(count*inc_long);\nmsg.payload = { \"name\":\"Jason\", \"lat\":lat, \"lon\":long,\"iconColor\":i_color,\"icon\":icon}    \n\nif (count <=12)\ncontext.set(\"count\",count);\ncontext.set(\"icon\",icon);\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -841,35 +711,7 @@
         "y": 440,
         "wires": [
             [
-                "b2144f8c880a87c7"
-            ]
-        ]
-    },
-    {
-        "id": "6c4a7011d92ce729",
-        "type": "inject",
-        "z": "46eac0e758129262",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "date",
-        "x": 240,
-        "y": 400,
-        "wires": [
-            [
-                "dcece3f70a0d0699"
+                "9df49d3b2e72c45c"
             ]
         ]
     },
@@ -998,27 +840,7 @@
         "y": 300,
         "wires": [
             [
-                "dcece3f70a0d0699",
-                "8bd80bc4f92914b4"
-            ]
-        ]
-    },
-    {
-        "id": "8bd80bc4f92914b4",
-        "type": "function",
-        "z": "46eac0e758129262",
-        "name": "reset boundary",
-        "func": "msg.payload={};\nmsg.payload.action=\"send\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 220,
-        "wires": [
-            [
-                "b2144f8c880a87c7"
+                "dcece3f70a0d0699"
             ]
         ]
     },
