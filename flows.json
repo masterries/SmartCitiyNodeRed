@@ -607,5 +607,41 @@
                 "39a2a9f80bc66c7f"
             ]
         ]
+    },
+    {
+        "id": "cefd820f1bc23bb3",
+        "type": "ui_worldmap",
+        "z": "dbf7bfac9deb3b76",
+        "group": "12f51630d4ade7a5",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 500,
+        "y": 740,
+        "wires": []
     }
 ]
