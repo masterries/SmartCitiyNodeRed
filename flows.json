@@ -714,7 +714,7 @@
         "order": 8,
         "width": 0,
         "height": 0,
-        "format": "<script>\n  (function(scope) {\n        scope.$watch('msg.label', function(label) {\n            if (label) {\n                $('#spawn-move-button').text(label);\n            }\n        });\n    })(scope);\n</script>",
+        "format": "<script>\n  (function(scope) {\n        scope.$watch('msg.label', function(label) {\n            if (label) {\n                $('#spawn-move-button').text(label);\n                console.log(label)\n            }\n        });\n    })(scope);\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
