@@ -731,7 +731,7 @@
         "type": "function",
         "z": "dbf7bfac9deb3b76",
         "name": "function 3",
-        "func": "var humanSpawned = flow.get('humanSpawned') || false;\n\nif (!humanSpawned) {\n    flow.set('humanSpawned', true);\n    msg.label = 'Move Human';\n    // Setzen Sie hier auch die anderen msg Eigenschaften für das Spawnen des Humans\n} else {\n    msg.label = 'Move Human';\n    // Setzen Sie hier auch die anderen msg Eigenschaften für das Bewegen des Humans\n}\n\nreturn msg;\n",
+        "func": "var humanSpawned = flow.get('humanSpawned') || false;\n\nif (!humanSpawned) {\n    flow.set('humanSpawned', true);\n    msg.label = 'Move Human';\n    // Setzen Sie hier auch die anderen msg Eigenschaften für das Spawnen des Humans\n} else {\n    msg.label = 'Move Human';\n    // Setzen Sie hier auch die anderen msg Eigenschaften für das Bewegen des Humans\n}\nmsg.label = 'Move Human'\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
