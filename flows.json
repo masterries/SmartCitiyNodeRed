@@ -604,28 +604,7 @@
         "y": 180,
         "wires": [
             [
-                "39a2a9f80bc66c7f",
-                "3a9d51e978963d35"
-            ]
-        ]
-    },
-    {
-        "id": "3a9d51e978963d35",
-        "type": "function",
-        "z": "dbf7bfac9deb3b76",
-        "name": "function 1",
-        "func": "msg.payload = {\n  command: \"enableDrawing\",\n  enable: msg.payload // true to enable, false to disable\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 40,
-        "wires": [
-            [
-                "04f46cfc8b192169"
+                "39a2a9f80bc66c7f"
             ]
         ]
     }
