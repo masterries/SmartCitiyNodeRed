@@ -29,7 +29,7 @@
         "usetls": false,
         "tls": "ca02cd774711dea0",
         "influxdbVersion": "2.0",
-        "url": "http://influxdb:8086/",
+        "url": "http://46.38.243.223:8086/",
         "rejectUnauthorized": true
     },
     {
@@ -448,8 +448,8 @@
         "database": "database",
         "precisionV18FluxV20": "ms",
         "retentionPolicyV18Flux": "",
-        "org": "test",
-        "bucket": "test",
+        "org": "Uni",
+        "bucket": "gpsBucket1",
         "x": 1050,
         "y": 180,
         "wires": []
