@@ -546,7 +546,7 @@
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "text",
+        "label": "Current Distance",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -554,7 +554,7 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1050,
+        "x": 1090,
         "y": 100,
         "wires": []
     }
