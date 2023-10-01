@@ -642,7 +642,7 @@
         "type": "function",
         "z": "dbf7bfac9deb3b76",
         "name": "function 1",
-        "func": "// Initial coordinates\nvar latitude = flow.get('latitude') || 48.203978;\nvar longitude = flow.get('longitude') || 16.377162;\n\n// Check if the payload is 'move' to move the point\n\n    // Change the coordinates slightly\n    latitude += 0.0001; // Adjust the value as needed\n    longitude += 0.0001; // Adjust the value as needed\n\n    // Update the coordinates in the flow context\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n    // Create the payload for the worldmap node\n    msg.payload = {\n        name: \"male\", // Name of the point\n        lat: latitude,\n        lon: longitude,\n        icon: \"male\", // Icon for the point\n        layer: \"drawing\" // Layer for the point\n    };\n\nnode.warn(msg)\n\nreturn msg;\n",
+        "func": "// Initial coordinates\nvar latitude = flow.get('latitude') || 48.203978;\nvar longitude = flow.get('longitude') || 16.377162;\n\n// Check if the payload is 'move' to move the point\n\n    // Change the coordinates slightly\n    latitude += 0.0001; // Adjust the value as needed\n    longitude += 0.0001; // Adjust the value as needed\n\n    // Update the coordinates in the flow context\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n    // Create the payload for the worldmap node\n    msg.payload = {\n        name: \"male\", // Name of the point\n        lat: latitude,\n        lon: longitude,\n        icon: \"ship\", // Icon for the point\n        layer: \"drawing\" // Layer for the point\n    };\n\nnode.warn(msg)\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
