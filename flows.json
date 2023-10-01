@@ -732,7 +732,7 @@
         "type": "function",
         "z": "dbf7bfac9deb3b76",
         "name": "function 3",
-        "func": "\nreturn flow.get('buttonText');",
+        "func": "node.warn(flow.get('buttonText'));\nreturn flow.get('buttonText');",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
