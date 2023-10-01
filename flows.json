@@ -315,7 +315,7 @@
         "name": "",
         "group": "12f51630d4ade7a5",
         "order": 1,
-        "width": "1",
+        "width": "3",
         "height": "1",
         "passthru": false,
         "label": "Clear Rectangle",
