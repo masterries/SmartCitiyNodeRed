@@ -701,8 +701,7 @@
         "wires": [
             [
                 "04f46cfc8b192169",
-                "bfd3320bede8422c",
-                "1e9691273bea3b89"
+                "bfd3320bede8422c"
             ]
         ]
     },
@@ -715,7 +714,7 @@
         "order": 8,
         "width": 0,
         "height": 0,
-        "format": "<script>\n  (function(scope) {\n    scope.$watch('msg.payload', function(data) {\n      var buttonText = scope.get('buttonText') || 'Spawn Human';\n      $('#spawn-move-button').text(buttonText);\n    });\n  })(scope);\n</script>",
+        "format": "<script>\n  (function(scope) {\n    scope.$watch('msg.payload', function(data) {\n      var buttonText = scope.get('buttonText') || 'Spawn Human';\n      console.log(buttonText)\n      $('#spawn-move-button').text(buttonText);\n    });\n  })(scope);\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -726,41 +725,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "1e9691273bea3b89",
-        "type": "function",
-        "z": "dbf7bfac9deb3b76",
-        "name": "function 3",
-        "func": "node.warn(flow.get('buttonText'));\nreturn flow.get('buttonText');",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 620,
-        "wires": [
-            [
-                "115f9ba97fab590a"
-            ]
-        ]
-    },
-    {
-        "id": "115f9ba97fab590a",
-        "type": "debug",
-        "z": "dbf7bfac9deb3b76",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 640,
-        "wires": []
     }
 ]
