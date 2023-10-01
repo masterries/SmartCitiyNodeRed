@@ -276,7 +276,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
+        "x": 640,
         "y": 240,
         "wires": [
             [
@@ -628,8 +628,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 220,
-        "y": 680,
+        "x": 460,
+        "y": 760,
         "wires": [
             [
                 "d5e1103b246c8672"
@@ -648,8 +648,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 780,
+        "x": 720,
+        "y": 820,
         "wires": [
             [
                 "5b9bf86f973e6164"
@@ -660,7 +660,7 @@
         "id": "60b51c3ead612ebe",
         "type": "ui_button",
         "z": "dbf7bfac9deb3b76",
-        "name": "spawn-move-button",
+        "name": "Reset Human",
         "group": "12f51630d4ade7a5",
         "order": 6,
         "width": "3",
@@ -676,8 +676,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 220,
-        "y": 740,
+        "x": 200,
+        "y": 820,
         "wires": [
             [
                 "78aba21f35cbbcc3"
