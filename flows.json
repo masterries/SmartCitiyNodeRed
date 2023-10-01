@@ -151,16 +151,6 @@
         }
     },
     {
-        "id": "5f5eb96cfc5ad176",
-        "type": "ui_spacer",
-        "z": "dbf7bfac9deb3b76",
-        "name": "spacer",
-        "group": "12f51630d4ade7a5",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
         "id": "39a2a9f80bc66c7f",
         "type": "function",
         "z": "dbf7bfac9deb3b76",
