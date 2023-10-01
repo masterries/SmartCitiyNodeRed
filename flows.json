@@ -220,7 +220,7 @@
         "showruler": "false",
         "allowFileDrop": "false",
         "path": "/worldmap",
-        "overlist": "DR,CO,RA,DN,HM",
+        "overlist": "DR",
         "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
         "mapname": "",
         "mapurl": "",
