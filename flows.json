@@ -1,16 +1,177 @@
 [
     {
-        "id": "983154c4836a9165",
+        "id": "dbf7bfac9deb3b76",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Flow 2",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "4c094130f74a552e",
+        "id": "12f51630d4ade7a5",
+        "type": "ui_group",
+        "name": "Standard",
+        "tab": "6c840d909829e409",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1b1373c9.68594c",
+        "type": "influxdb",
+        "hostname": "influxdb",
+        "port": "8086",
+        "protocol": "http",
+        "database": "db0",
+        "name": "own influx db",
+        "usetls": false,
+        "tls": "ca02cd774711dea0",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086/",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "6c840d909829e409",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ca02cd774711dea0",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    },
+    {
+        "id": "20f92bba13aa60ee",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "39a2a9f80bc66c7f",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "poly gen",
+        "func": "let counter = context.get('counter') || 0;\n\nconst latitude = 48.2082;\nconst longitude = 16.3738;\n\nconst offsetLat = (Math.random() - 0.5) * 0.01;\nconst offsetLon = (Math.random() - 0.5) * 0.01;\n\nconst newLatitude = latitude + offsetLat;\nconst newLongitude = longitude + offsetLon;\n\n\nmsg.payload = {\n    name: 'generated-point-' + counter,\n    lat: newLatitude,\n    lon: newLongitude\n};\n\n\ncontext.set('counter', ++counter);\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 220,
+        "wires": [
+            [
+                "5b9bf86f973e6164"
+            ]
+        ]
+    },
+    {
+        "id": "25608f60ec0df0b2",
         "type": "inject",
-        "z": "983154c4836a9165",
+        "z": "dbf7bfac9deb3b76",
         "name": "",
         "props": [
             {
@@ -28,19 +189,322 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 320,
-        "y": 120,
+        "x": 160,
+        "y": 220,
         "wires": [
             [
-                "5fb05c8b2fe8630f",
-                "d3660ba7039af409"
+                "39a2a9f80bc66c7f"
             ]
         ]
     },
     {
-        "id": "5fb05c8b2fe8630f",
+        "id": "04f46cfc8b192169",
+        "type": "worldmap",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "lat": "48.2",
+        "lon": "16.3",
+        "zoom": "13",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1040,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "80edec69ceb14877",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "Poly save",
+        "func": "if (msg.payload.action === \"draw\" && msg.payload.type === \"rectangle\") {\n    global.set('polygon', msg.payload.area);\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "5b9bf86f973e6164"
+            ]
+        ]
+    },
+    {
+        "id": "f1b84dc286b4570f",
+        "type": "worldmap in",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "path": "/worldmap",
+        "events": "connect,disconnect,point,layer,bounds,files,draw,other",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "80edec69ceb14877"
+            ]
+        ]
+    },
+    {
+        "id": "5b9bf86f973e6164",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "geofence",
+        "func": "\nconst point = [msg.payload.lat, msg.payload.lon];\nconst polygon = global.get('polygon') || [];\n//node.warn(\"Polygon: \" + JSON.stringify(polygon));\n\n\n\n\n//node.warn(\"Punkt: \" + JSON.stringify(point));\n//node.warn(\"Polygon: \" + JSON.stringify(polygon));\n\nfunction isPointInPolygon(point, polygon) {\n    let isInside = false;\n    let x = point[1], y = point[0];\n\n    for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {\n        let xi = polygon[i].lng, yi = polygon[i].lat;\n        let xj = polygon[j].lng, yj = polygon[j].lat;\n\n        if ((yi > y) !== (yj > y) &&\n            (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) {\n            isInside = !isInside;\n        }\n    }\n    return isInside;\n}\n\n\nconst isInside = isPointInPolygon(point, polygon);\n\n\nmsg.payload.isInside = isInside;\n\nif (isInside) {\n    msg.payload.iconColor = \"green\";\n} else {\n    msg.payload.iconColor = \"red\";\n}\n\nmsg.payload.layer = \"pointsLayer\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "04f46cfc8b192169",
+                "67aa2bd42c74c764",
+                "6e906b4791ec5fdc"
+            ]
+        ]
+    },
+    {
+        "id": "2cdf0bf79edee83f",
+        "type": "ui_template",
+        "z": "dbf7bfac9deb3b76",
+        "group": "12f51630d4ade7a5",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<iframe src=\"/worldmap\" style=\"width:100%; height:70vh;\" frameborder=\"0\"></iframe>\n\n<style>\n    .nr-dashboard-template {\n        width: 100% !important;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "04f46cfc8b192169"
+            ]
+        ]
+    },
+    {
+        "id": "11bf5e7dec911278",
+        "type": "ui_button",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "group": "12f51630d4ade7a5",
+        "order": 1,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "Clear Rectangle",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 180,
+        "y": 360,
+        "wires": [
+            [
+                "0320f9d4d9276df8"
+            ]
+        ]
+    },
+    {
+        "id": "0320f9d4d9276df8",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "delete Polys",
+        "func": "global.set('polygon', null);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "290965ef1e46dbff"
+            ]
+        ]
+    },
+    {
+        "id": "290965ef1e46dbff",
+        "type": "change",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"command\":{\"clear\":\"_drawing\"}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "04f46cfc8b192169"
+            ]
+        ]
+    },
+    {
+        "id": "73bd29b0c187a3c7",
+        "type": "ui_button",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "group": "12f51630d4ade7a5",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "Clear Points",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 400,
+        "wires": [
+            [
+                "586b68a649870fdd"
+            ]
+        ]
+    },
+    {
+        "id": "586b68a649870fdd",
+        "type": "change",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"command\":{\"clear\":\"pointsLayer\"}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 400,
+        "wires": [
+            [
+                "04f46cfc8b192169"
+            ]
+        ]
+    },
+    {
+        "id": "6e906b4791ec5fdc",
+        "type": "influxdb out",
+        "z": "dbf7bfac9deb3b76",
+        "influxdb": "1b1373c9.68594c",
+        "name": "gps Bucket",
+        "measurement": "gpssensor",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "test",
+        "bucket": "test",
+        "x": 1050,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4056d334a16f9d17",
+        "type": "influxdb in",
+        "z": "dbf7bfac9deb3b76",
+        "influxdb": "1b1373c9.68594c",
+        "name": "",
+        "query": "from(bucket: \"gpstest1\")\n  |> range(start: -100d)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"gpssensor\")\n  |> filter(fn: (r) => r[\"_field\"] == \"lon\" or r[\"_field\"] == \"lat\")\n  |> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "org0",
+        "x": 490,
+        "y": 540,
+        "wires": [
+            [
+                "2de80327ea49d6b4"
+            ]
+        ]
+    },
+    {
+        "id": "4c0e72249f314a56",
+        "type": "ui_button",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "group": "12f51630d4ade7a5",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Calc Distance",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "4056d334a16f9d17"
+            ]
+        ]
+    },
+    {
+        "id": "2de80327ea49d6b4",
         "type": "debug",
-        "z": "983154c4836a9165",
+        "z": "dbf7bfac9deb3b76",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -49,28 +513,48 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 200,
+        "x": 900,
+        "y": 540,
         "wires": []
     },
     {
-        "id": "d3660ba7039af409",
+        "id": "67aa2bd42c74c764",
         "type": "function",
-        "z": "983154c4836a9165",
-        "name": "function 1",
-        "func": "\nreturn msg;",
+        "z": "dbf7bfac9deb3b76",
+        "name": "calc Distance",
+        "func": "const R = 6371e3;\n\nfunction toRadians(degrees) {\n    return degrees * (Math.PI / 180);\n}\n\nfunction calculateDistance(lat1, lon1, lat2, lon2) {\n    const phi1 = toRadians(lat1);\n    const phi2 = toRadians(lat2);\n    const deltaPhi = toRadians(lat2 - lat1);\n    const deltaLambda = toRadians(lon2 - lon1);\n\n    const a = Math.sin(deltaPhi / 2) * Math.sin(deltaPhi / 2) +\n        Math.cos(phi1) * Math.cos(phi2) *\n        Math.sin(deltaLambda / 2) * Math.sin(deltaLambda / 2);\n    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n\n    return R * c;\n}\n\n\n\nconst currentPoint = {\n    lat: msg.payload.lat,\n    lon: msg.payload.lon\n};\n\n\nconst previousPoint = global.get(\"previousPoint\") || currentPoint;\nconst distance = calculateDistance(currentPoint.lat, currentPoint.lon, previousPoint.lat, previousPoint.lon);\nconst totalDistance = global.get(\"totalDistance2\") || 0;\nglobal.set(\"totalDistance2\", totalDistance + distance);\nglobal.set(\"previousPoint\", currentPoint);\n\nreturn { payload: (totalDistance + distance) / 1000 + \" km\" };\n\n",
         "outputs": 1,
-        "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 420,
+        "x": 810,
+        "y": 100,
         "wires": [
             [
-                "5fb05c8b2fe8630f"
+                "58c2d1223a696414"
             ]
         ]
+    },
+    {
+        "id": "58c2d1223a696414",
+        "type": "ui_text",
+        "z": "dbf7bfac9deb3b76",
+        "group": "12f51630d4ade7a5",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1050,
+        "y": 100,
+        "wires": []
     }
 ]
