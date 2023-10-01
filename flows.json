@@ -29,7 +29,7 @@
         "usetls": false,
         "tls": "ca02cd774711dea0",
         "influxdbVersion": "2.0",
-        "url": "http://46.38.243.223:8086",
+        "url": "http://localhost:8086",
         "rejectUnauthorized": true
     },
     {
@@ -454,7 +454,7 @@
         "id": "6e906b4791ec5fdc",
         "type": "influxdb out",
         "z": "dbf7bfac9deb3b76",
-        "influxdb": "410c4b6a68569fe5",
+        "influxdb": "1b1373c9.68594c",
         "name": "gps Bucket",
         "measurement": "gpssensor",
         "precision": "",
