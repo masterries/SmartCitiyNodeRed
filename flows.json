@@ -700,8 +700,30 @@
         "y": 620,
         "wires": [
             [
-                "04f46cfc8b192169"
+                "04f46cfc8b192169",
+                "bfd3320bede8422c"
             ]
+        ]
+    },
+    {
+        "id": "bfd3320bede8422c",
+        "type": "ui_template",
+        "z": "dbf7bfac9deb3b76",
+        "group": "12f51630d4ade7a5",
+        "name": "",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n    (function(scope) {\n    scope.$watch('msg.payload', function(data) {\n      var buttonText = scope.get('buttonText') || 'Spawn Human';\n      $('#spawn-move-button').text(buttonText);\n    });\n  })(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 600,
+        "y": 680,
+        "wires": [
+            []
         ]
     }
 ]
