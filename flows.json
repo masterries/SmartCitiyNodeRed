@@ -25,7 +25,7 @@
         "port": "8086",
         "protocol": "http",
         "database": "db0",
-        "name": "own influx db",
+        "name": "Server 46",
         "usetls": false,
         "tls": "ca02cd774711dea0",
         "influxdbVersion": "2.0",
@@ -148,34 +148,6 @@
                 "py": 0
             }
         }
-    },
-    {
-        "id": "410c4b6a68569fe5",
-        "type": "influxdb",
-        "hostname": "46.38.243.223",
-        "port": "8086",
-        "protocol": "http",
-        "database": "database",
-        "name": "test",
-        "usetls": false,
-        "tls": "ca02cd774711dea0",
-        "influxdbVersion": "2.0",
-        "url": "http://46.38.243.223:8086/",
-        "rejectUnauthorized": true
-    },
-    {
-        "id": "d35b4f02385b7179",
-        "type": "influxdb",
-        "hostname": "127.0.0.1",
-        "port": "8086",
-        "protocol": "http",
-        "database": "database",
-        "name": "",
-        "usetls": false,
-        "tls": "ca02cd774711dea0",
-        "influxdbVersion": "1.8-flux",
-        "url": "http://46.38.243.223:8086/",
-        "rejectUnauthorized": false
     },
     {
         "id": "39a2a9f80bc66c7f",
