@@ -470,7 +470,7 @@
         "y": 540,
         "wires": [
             [
-                "2de80327ea49d6b4"
+                "02303b8daca368ec"
             ]
         ]
     },
@@ -731,6 +731,26 @@
         "wires": [
             [
                 "4056d334a16f9d17"
+            ]
+        ]
+    },
+    {
+        "id": "02303b8daca368ec",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "calc Distance",
+        "func": "const R = 6371e3;\n\nfunction toRadians(degrees) {\n    return degrees * (Math.PI / 180);\n}\n\nfunction calculateDistance(lat1, lon1, lat2, lon2) {\n    const phi1 = toRadians(lat1);\n    const phi2 = toRadians(lat2);\n    const deltaPhi = toRadians(lat2 - lat1);\n    const deltaLambda = toRadians(lon2 - lon1);\n\n    const a = Math.sin(deltaPhi / 2) * Math.sin(deltaPhi / 2) +\n        Math.cos(phi1) * Math.cos(phi2) *\n        Math.sin(deltaLambda / 2) * Math.sin(deltaLambda / 2);\n    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n\n    return R * c;\n}\n\n\n\nconst currentPoint = {\n    lat: msg.payload.lat,\n    lon: msg.payload.lon\n};\n\n\nconst previousPoint = global.get(\"previousPoint\") || currentPoint;\nconst distance = calculateDistance(currentPoint.lat, currentPoint.lon, previousPoint.lat, previousPoint.lon);\nconst totalDistance = global.get(\"totalDistance2\") || 0;\nglobal.set(\"totalDistance2\", totalDistance + distance);\nglobal.set(\"previousPoint\", currentPoint);\n\nreturn { payload: (totalDistance + distance) / 1000 + \" km\" };\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 460,
+        "wires": [
+            [
+                "2de80327ea49d6b4"
             ]
         ]
     }
