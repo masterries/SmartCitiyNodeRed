@@ -625,7 +625,7 @@
         "bgcolor": "",
         "className": "spawn-move-button",
         "icon": "",
-        "payload": "",
+        "payload": "click",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
@@ -633,7 +633,8 @@
         "y": 780,
         "wires": [
             [
-                "4d63e25377dd8558"
+                "4d63e25377dd8558",
+                "8c3bb18eb5d16ba2"
             ]
         ]
     },
@@ -700,8 +701,7 @@
         "y": 620,
         "wires": [
             [
-                "04f46cfc8b192169",
-                "bfd3320bede8422c"
+                "04f46cfc8b192169"
             ]
         ]
     },
@@ -714,16 +714,36 @@
         "order": 8,
         "width": 0,
         "height": 0,
-        "format": "<script>\n  (function(scope) {\n    scope.$watch('msg.payload', function(data) {\n      var buttonText = scope.get('buttonText') || 'Spawn Human';\n      console.log('Button Text:', buttonText); // Loggt den Button Text in der Browser Konsole\n      $('#spawn-move-button').text(buttonText);\n    });\n  })(scope);\n</script>",
+        "format": "<script>\n  (function(scope) {\n        scope.$watch('msg.label', function(label) {\n            if (label) {\n                $('#spawn-move-button').text(label);\n            }\n        });\n    })(scope);\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 600,
-        "y": 680,
+        "x": 660,
+        "y": 840,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "8c3bb18eb5d16ba2",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "function 3",
+        "func": "var humanSpawned = flow.get('humanSpawned') || false;\n\nif (!humanSpawned) {\n    flow.set('humanSpawned', true);\n    msg.label = 'Move Human';\n    // Setzen Sie hier auch die anderen msg Eigenschaften für das Spawnen des Humans\n} else {\n    msg.label = 'Move Human';\n    // Setzen Sie hier auch die anderen msg Eigenschaften für das Bewegen des Humans\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 820,
+        "wires": [
+            [
+                "bfd3320bede8422c"
+            ]
         ]
     }
 ]
