@@ -212,12 +212,12 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "1",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
+        "x": 170,
         "y": 220,
         "wires": [
             [
