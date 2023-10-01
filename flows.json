@@ -633,8 +633,7 @@
         "y": 780,
         "wires": [
             [
-                "4d63e25377dd8558",
-                "8c3bb18eb5d16ba2"
+                "4d63e25377dd8558"
             ]
         ]
     },
@@ -762,5 +761,34 @@
         "x": 610,
         "y": 660,
         "wires": []
+    },
+    {
+        "id": "53294f1168ed86dd",
+        "type": "inject",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 860,
+        "wires": [
+            [
+                "8c3bb18eb5d16ba2"
+            ]
+        ]
     }
 ]
