@@ -608,5 +608,53 @@
                 "39a2a9f80bc66c7f"
             ]
         ]
+    },
+    {
+        "id": "45e4c70e6ec675a6",
+        "type": "ui_button",
+        "z": "dbf7bfac9deb3b76",
+        "name": "",
+        "group": "12f51630d4ade7a5",
+        "order": 6,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "label": "Move Human",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 780,
+        "wires": [
+            [
+                "d5e1103b246c8672"
+            ]
+        ]
+    },
+    {
+        "id": "d5e1103b246c8672",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "function 1",
+        "func": "// Initial coordinates\nvar latitude = flow.get('latitude') || 48.203978;\nvar longitude = flow.get('longitude') || 16.377162;\n\n// Check if the payload is 'move' to move the point\nif (msg.payload === \"move\") {\n    // Change the coordinates slightly\n    latitude += 0.0001; // Adjust the value as needed\n    longitude += 0.0001; // Adjust the value as needed\n\n    // Update the coordinates in the flow context\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n    // Create the payload for the worldmap node\n    msg.payload = {\n        name: \"male\", // Name of the point\n        lat: latitude,\n        lon: longitude,\n        icon: \"male\", // Icon for the point\n        layer: \"drawing\" // Layer for the point\n    };\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 740,
+        "wires": [
+            [
+                "04f46cfc8b192169"
+            ]
+        ]
     }
 ]
