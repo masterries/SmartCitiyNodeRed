@@ -29,7 +29,7 @@
         "usetls": false,
         "tls": "ca02cd774711dea0",
         "influxdbVersion": "2.0",
-        "url": "http://46.38.243.223:8086/",
+        "url": "http://46.38.243.223:8086",
         "rejectUnauthorized": true
     },
     {
