@@ -618,7 +618,7 @@
         "width": "4",
         "height": "1",
         "passthru": false,
-        "label": "spawn-move-button",
+        "label": "Move Human",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -628,8 +628,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 160,
-        "y": 780,
+        "x": 220,
+        "y": 680,
         "wires": [
             [
                 "d5e1103b246c8672"
@@ -654,6 +654,32 @@
             [
                 "5b9bf86f973e6164"
             ]
+        ]
+    },
+    {
+        "id": "60b51c3ead612ebe",
+        "type": "ui_button",
+        "z": "dbf7bfac9deb3b76",
+        "name": "spawn-move-button",
+        "group": "12f51630d4ade7a5",
+        "order": 6,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "label": "Reset Human",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "spawn-move-button",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 740,
+        "wires": [
+            []
         ]
     }
 ]
