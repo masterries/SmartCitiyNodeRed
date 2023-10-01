@@ -281,8 +281,7 @@
         "wires": [
             [
                 "04f46cfc8b192169",
-                "67aa2bd42c74c764",
-                "6e906b4791ec5fdc"
+                "67aa2bd42c74c764"
             ]
         ]
     },
@@ -649,76 +648,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
+        "x": 460,
         "y": 780,
         "wires": [
             [
-                "04f46cfc8b192169"
+                "04f46cfc8b192169",
+                "5b9bf86f973e6164"
             ]
         ]
-    },
-    {
-        "id": "f9e1a2eee92e46d8",
-        "type": "inject",
-        "z": "dbf7bfac9deb3b76",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 80,
-        "y": 640,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bfd3320bede8422c",
-        "type": "ui_template",
-        "z": "dbf7bfac9deb3b76",
-        "group": "12f51630d4ade7a5",
-        "name": "",
-        "order": 8,
-        "width": 0,
-        "height": 0,
-        "format": "<script>\n  (function(scope) {\n        scope.$watch('msg.label', function(label) {\n            if (label) {\n                $('#spawn-move-button').text(label);\n                console.log(label)\n            }\n        });\n    })(scope);\n</script>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 660,
-        "y": 840,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e180bd99c7ad94e0",
-        "type": "debug",
-        "z": "dbf7bfac9deb3b76",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 660,
-        "wires": []
     }
 ]
