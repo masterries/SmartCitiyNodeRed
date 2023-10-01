@@ -714,7 +714,7 @@
         "order": 8,
         "width": 0,
         "height": 0,
-        "format": "<script>\n    (function(scope) {\n    scope.$watch('msg.payload', function(data) {\n      var buttonText = scope.get('buttonText') || 'Spawn Human';\n      $('#spawn-move-button').text(buttonText);\n    });\n  })(scope);\n</script>",
+        "format": "<script>\n    (function(scope) {\n    scope.$watch('msg.payload', function(data) {\n      var buttonText = scope.get('buttonText') || 'Spawn Bird';\n      $('#spawn-move-button').text(buttonText);\n    });\n  })(scope);\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
