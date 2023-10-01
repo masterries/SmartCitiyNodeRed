@@ -164,6 +164,20 @@
         "rejectUnauthorized": true
     },
     {
+        "id": "d35b4f02385b7179",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "ca02cd774711dea0",
+        "influxdbVersion": "1.8-flux",
+        "url": "http://46.38.243.223:8086/",
+        "rejectUnauthorized": true
+    },
+    {
         "id": "39a2a9f80bc66c7f",
         "type": "function",
         "z": "dbf7bfac9deb3b76",
@@ -454,7 +468,7 @@
         "id": "6e906b4791ec5fdc",
         "type": "influxdb out",
         "z": "dbf7bfac9deb3b76",
-        "influxdb": "1b1373c9.68594c",
+        "influxdb": "d35b4f02385b7179",
         "name": "gps Bucket",
         "measurement": "gpssensor",
         "precision": "",
