@@ -641,7 +641,7 @@
         "type": "function",
         "z": "dbf7bfac9deb3b76",
         "name": "function 1",
-        "func": "// Initial coordinates\nvar latitude = flow.get('latitude') || 48.203978;\nvar longitude = flow.get('longitude') || 16.377162;\n\n    latitude += 0.0001; \n    longitude += 0.0001; \n\n\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n\n    msg.payload = {\n        name: \"male\", \n        lat: latitude,\n        lon: longitude,\n        icon: \"male\", // Icon for the point\n        layer: \"drawing\" \n    };\n\nnode.warn(msg)\n\nreturn msg;\n",
+        "func": "// Initial coordinates\nvar latitude = flow.get('latitude') || 48.203978;\nvar longitude = flow.get('longitude') || 16.377162;\n\n    latitude += 0.0001; \n    longitude += 0.0001; \n\n\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n\n    msg.payload = {\n        name: \"male\", \n        lat: latitude,\n        lon: longitude,\n        icon: \"https://img.icons8.com/windows/32/000000/bird.png\",\n        layer: \"drawing\" \n    };\n\nnode.warn(msg)\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
