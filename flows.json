@@ -623,7 +623,7 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
-        "className": "Spawn Human",
+        "className": "spawn-move-button",
         "icon": "",
         "payload": "",
         "payloadType": "str",
