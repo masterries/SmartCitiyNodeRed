@@ -470,7 +470,8 @@
         "y": 540,
         "wires": [
             [
-                "2de80327ea49d6b4"
+                "2de80327ea49d6b4",
+                "21bc3b4da88213fc"
             ]
         ]
     },
@@ -733,5 +734,41 @@
                 "4056d334a16f9d17"
             ]
         ]
+    },
+    {
+        "id": "21bc3b4da88213fc",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "function 1",
+        "func": "function haversine(lat1, lon1, lat2, lon2) {\n    function toRad(x) {\n        return x * Math.PI / 180;\n    }\n\n    var R = 6371; // Radius der Erde in km\n    var x1 = lat2 - lat1;\n    var dLat = toRad(x1);\n    var x2 = lon2 - lon1;\n    var dLon = toRad(x2);\n    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +\n            Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *\n            Math.sin(dLon / 2) * Math.sin(dLon / 2);\n    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n    var d = R * c;\n\n    return d;\n}\n\nvar totalDistance = 0;\nvar data = msg.payload; // Angenommen, msg.payload enthält die Liste der GPS-Punkte\n\nfor(var i = 0; i < data.length - 1; i++) {\n    var point1 = data[i];\n    var point2 = data[i + 1];\n\n    totalDistance += haversine(point1.lat, point1.lon, point2.lat, point2.lon);\n}\n\nmsg.payload = totalDistance;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 660,
+        "wires": [
+            [
+                "3fce49b9a8ee940b"
+            ]
+        ]
+    },
+    {
+        "id": "3fce49b9a8ee940b",
+        "type": "debug",
+        "z": "dbf7bfac9deb3b76",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 660,
+        "wires": []
     }
 ]
