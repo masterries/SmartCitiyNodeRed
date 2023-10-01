@@ -187,6 +187,7 @@
         "name": "poly gen",
         "func": "let counter = context.get('counter') || 0;\n\nconst latitude = 48.2082;\nconst longitude = 16.3738;\n\nconst offsetLat = (Math.random() - 0.5) * 0.01;\nconst offsetLon = (Math.random() - 0.5) * 0.01;\n\nconst newLatitude = latitude + offsetLat;\nconst newLongitude = longitude + offsetLon;\n\n\nmsg.payload = {\n    name: 'generated-point-' + counter,\n    lat: newLatitude,\n    lon: newLongitude\n};\n\n\ncontext.set('counter', ++counter);\n\nreturn msg;\n\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
