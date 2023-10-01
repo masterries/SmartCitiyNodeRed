@@ -625,7 +625,7 @@
         "bgcolor": "",
         "className": "spawn-move-button",
         "icon": "",
-        "payload": "click",
+        "payload": "",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
