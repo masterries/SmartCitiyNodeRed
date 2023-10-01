@@ -619,7 +619,7 @@
         "width": "4",
         "height": "1",
         "passthru": false,
-        "label": "Move Human",
+        "label": "Move Bird",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -629,11 +629,11 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 140,
+        "x": 130,
         "y": 780,
         "wires": [
             [
-                "d5e1103b246c8672"
+                "4d63e25377dd8558"
             ]
         ]
     },
@@ -642,19 +642,17 @@
         "type": "function",
         "z": "dbf7bfac9deb3b76",
         "name": "function 1",
-        "func": "// Initial coordinates\nvar latitude = flow.get('latitude') || 48.203978;\nvar longitude = flow.get('longitude') || 16.377162;\n\n// Check if the payload is 'move' to move the point\n\n    // Change the coordinates slightly\n    latitude += 0.0001; // Adjust the value as needed\n    longitude += 0.0001; // Adjust the value as needed\n\n    // Update the coordinates in the flow context\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n    // Create the payload for the worldmap node\n    msg.payload = {\n        name: \"male\", // Name of the point\n        lat: latitude,\n        lon: longitude,\n        icon: \"https://img.icons8.com/windows/32/000000/bird.png\", // Icon for the point\n        layer: \"drawing\" // Layer for the point\n    };\n\nnode.warn(msg)\n\nreturn msg;\n",
+        "func": "// Initial coordinates\nvar latitude = flow.get('latitude') || 48.203978;\nvar longitude = flow.get('longitude') || 16.377162;\n\n    latitude += 0.0001; \n    longitude += 0.0001; \n\n\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n\n    msg.payload = {\n        name: \"male\", \n        lat: latitude,\n        lon: longitude,\n        icon: \"https://img.icons8.com/windows/32/000000/bird.png\", // Icon for the point\n        layer: \"drawing\" \n    };\n\nnode.warn(msg)\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 740,
+        "x": 640,
+        "y": 780,
         "wires": [
-            [
-                "04f46cfc8b192169"
-            ]
+            []
         ]
     },
     {
@@ -683,6 +681,26 @@
         "wires": [
             [
                 "d5e1103b246c8672"
+            ]
+        ]
+    },
+    {
+        "id": "4d63e25377dd8558",
+        "type": "function",
+        "z": "dbf7bfac9deb3b76",
+        "name": "function 2",
+        "func": "// Check if a human has already been spawned\nvar humanSpawned = flow.get('humanSpawned') || false;\n\nif (!humanSpawned) {\n    // If human has not been spawned, spawn human and update button text\n    flow.set('humanSpawned', true);\n    flow.set('buttonText', 'Move Human');\n\n    // Set initial coordinates for the human\n    msg.payload = {\n        name: \"male\",\n        lat: 48.203978,\n        lon: 16.377162,\n        icon: \"male\",\n        layer: \"drawing\"\n    };\n} else {\n    // If human has been spawned, move human and keep button text\n    var latitude = flow.get('latitude') || 48.203978;\n    var longitude = flow.get('longitude') || 16.377162;\n\n    // Change the coordinates slightly\n    latitude += 0.0001;\n    longitude += 0.0001;\n\n    // Update the coordinates in the flow context\n    flow.set('latitude', latitude);\n    flow.set('longitude', longitude);\n\n    // Update the payload for the worldmap node\n    msg.payload = {\n        name: \"male\",\n        lat: latitude,\n        lon: longitude,\n        icon: \"male\",\n        layer: \"drawing\"\n    };\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 620,
+        "wires": [
+            [
+                "04f46cfc8b192169"
             ]
         ]
     }
